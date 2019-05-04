@@ -27,8 +27,8 @@ cat("HEALTHY SAMPLES\n\n")
 for(gene_index in 1:8 ) {
 	cat("GENE:",gene_names[gene_index],"\n\n")
 
-	sample_mean_gene <- apply(data_healthy[gene_index,1:10], 1, mean)
-	sample_std_gene <- apply(data_healthy[gene_index,1:10], 1, sd)
+	sample_mean_gene <- mean(as.numeric(data_healthy[gene_index,]))
+	sample_std_gene <- sd(as.numeric(data_healthy[gene_index,]))
 
 
 
@@ -50,8 +50,8 @@ cat("DISEASED SAMPLES\n\n")
 for(gene_index in 1:8 ) {
 	cat("GENE:",gene_names[gene_index],"\n\n")
 
-	sample_mean_gene <- apply(data_diseased[gene_index,1:10], 1, mean)
-	sample_std_gene <- apply(data_diseased[gene_index,1:10], 1, sd)
+	sample_mean_gene <- mean(as.numeric(data_diseased[gene_index,]))
+	sample_std_gene <- sd(as.numeric(data_diseased[gene_index,]))
 
 
 	conf_interval_left <- sample_mean_gene-t_score*(sample_std_gene/sqrt(10))
