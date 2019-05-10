@@ -66,3 +66,13 @@ for(gene_index in 1:8 ) {
 }
 
 
+
+for(gene_index in 1:8 ) {
+
+
+cat(mean(as.numeric(data_healthy[gene_index,])),mean(as.numeric(data_diseased[gene_index,])),"\n")
+	
+
+}
+
+
